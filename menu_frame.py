@@ -195,17 +195,23 @@ class MainMenu(wx.Frame):
         self.show_dlg.Show(1)
     #transform the color_space type
     def cvtcolor_handler( self, event ):
-        #create the dialog
-        cvtcolor_dlg = function_dialog.CvtcolorDlg( self.image_name, self.system_task, self.image_dict, \
-        self.show_dlg, self.temp_bitmap )
+        try:
+            #create the dialog
+            cvtcolor_dlg = function_dialog.CvtcolorDlg( self.image_name, self.system_task, self.image_dict, \
+            self.show_dlg, self.temp_bitmap )
+        except Exception as e:
+            wx.MessageBox( "You may not open the images or do some other neccessary operation before do that!", 'error' )
 
     ###########################################################################
     #######################please add the new function########################
 
     #threshold
     def threshold_handler( self, event ):
-        threshold_dlg = function_dialog.ThresholdDlg( self.image_name, self.system_task, self.image_dict, \
-        self.show_dlg, self.temp_bitmap )
+        try:
+            threshold_dlg = function_dialog.ThresholdDlg( self.image_name, self.system_task, self.image_dict, \
+            self.show_dlg, self.temp_bitmap )
+        except Exception as e:
+            wx.MessageBox( "You may not open the images or do some other neccessary operation before do that!", 'error' )
 
 if __name__ == '__main__':
     pass
