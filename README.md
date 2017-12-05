@@ -19,7 +19,7 @@ pip install wxpython
 You can clone down the project and open the 'Main_UI.py' to run the software.</br>
 ![PSPY](https://github.com/HamburgerZ/PSPY/blob/master/PSPY.PNG)</br>
 If you touch the 'file' in the menu and select the 'open image' in the list, the image will be shown in the window</br>
-![image_original]
+
 And we can process the digital image easily.
 For example, you can touch the 'process' in the menu and select the 'cvtcolor' in the list, the image will transform type of RGB to type of gray.</br>
 After that, you can select the 'threshold' in the same list and adjust the parameter by yourself, you will see the different binary image when you use different parameters.</br>
