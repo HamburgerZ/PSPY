@@ -200,14 +200,15 @@ class MainMenu(wx.Frame):
             cvtcolor_dlg = function_dialog.CvtcolorDlg( self.image_name, self.system_task, self.image_dict, \
             self.show_dlg, self.temp_bitmap )
         except Exception as e:
-            wx.MessageBox( "You may not open the images or do some other neccessary operation before do that!", 'error' )
+            wx.MessageBox( "You may not open the images or do some other neccessary operation before do that!", 'error' )
 
     ###########################################################################
     #######################please add the new function########################
 
     #threshold
-    def threshold_handler( self, event ):
+    def threshold_handler( self, event ): 
         try:
+            #create the dialog
             threshold_dlg = function_dialog.ThresholdDlg( self.image_name, self.system_task, self.image_dict, \
             self.show_dlg, self.temp_bitmap )
         except Exception as e:
@@ -215,7 +216,6 @@ class MainMenu(wx.Frame):
 
 if __name__ == '__main__':
     pass
-
 
 
 
