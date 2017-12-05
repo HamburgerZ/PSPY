@@ -24,6 +24,7 @@ For example, you can touch the 'process' in the menu and select the 'cvtcolor' i
 ![image_original](https://github.com/HamburgerZ/PSPY/blob/add-some-picture/image_original.PNG)
 ![image_gray](https://github.com/HamburgerZ/PSPY/blob/add-some-picture/image_gray.PNG)
 ![image_threshold](https://github.com/HamburgerZ/PSPY/blob/add-some-picture/image_threshold.PNG)</br>
+Of course,there are some other use and I will introduce that next time.
 
           
 
