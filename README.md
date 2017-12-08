@@ -25,9 +25,9 @@ the image will transform type of RGB to type of gray.After that,
 you can select the 'threshold' in the same list and adjust the parameter by yourself, 
 you will see the different binary image when you use different parameters.</br>
 
-![image_original](https://github.com/HamburgerZ/PSPY/blob//image_original.PNG)
-![image_gray](https://github.com/HamburgerZ/PSPY/blob//image_gray.PNG)
-![image_threshold](https://github.com/HamburgerZ/PSPY/blob//image_threshold.PNG)</br>
+![image_original](https://github.com/HamburgerZ/PSPY/blob/image_original.PNG)
+![image_gray](https://github.com/HamburgerZ/PSPY/blob/image_gray.PNG)
+![image_threshold](https://github.com/HamburgerZ/PSPY/blob/image_threshold.PNG)</br>
 
 Of course,there are some other functions and I will introduce those next time.
 
