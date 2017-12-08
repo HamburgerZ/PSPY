@@ -29,7 +29,7 @@ you will see the different binary image when you use different parameters.</br>
 ![image_gray](https://github.com/HamburgerZ/PSPY/blob/master/image_gray.PNG)
 ![image_threshold](https://github.com/HamburgerZ/PSPY/blob/master/image_threshold.PNG)</br>
 
-Of course,there are some other functions and I will introduce those next time.
+- Of course,there are some other functions and I will introduce those next time.
 
           
 
