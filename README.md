@@ -20,11 +20,16 @@ pip install wxpython
 
 - If you touch the 'file' in the menu and select the 'open image' in the list, the image will be shown in the window</br>
 And we can process the digital image easily.</br>
-- for example, you can touch the 'process' in the menu and select the 'cvtcolor' in the list, the image will transform type of RGB to type of gray.After that, you can select the 'threshold' in the same list and adjust the parameter by yourself, you will see the different binary image when you use different parameters.</br>
+- for example, you can touch the 'process' in the menu and select the 'cvtcolor' in the list, 
+the image will transform type of RGB to type of gray.After that,
+you can select the 'threshold' in the same list and adjust the parameter by yourself, 
+you will see the different binary image when you use different parameters.</br>
 
 ![image_original](https://github.com/HamburgerZ/PSPY/blob/add-some-picture/image_original.PNG)
 ![image_gray](https://github.com/HamburgerZ/PSPY/blob/add-some-picture/image_gray.PNG)
 ![image_threshold](https://github.com/HamburgerZ/PSPY/blob/add-some-picture/image_threshold.PNG)</br>
+
+Of course,there are some other functions and I will introduce those next time.
 
           
 
