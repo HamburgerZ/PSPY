@@ -29,8 +29,8 @@ you will see the different binary image when you use different parameters.</br>
 ![image_gray](https://github.com/HamburgerZ/PSPY/blob/master/image_gray.PNG)
 ![image_threshold](https://github.com/HamburgerZ/PSPY/blob/master/image_threshold.PNG)</br>
 
-# add your interface conveniently by python
-# design thought
+# Add your interface conveniently by python
+# Design thought
 
           
 
