@@ -1,7 +1,7 @@
 # PSPY
 PSPY is a digital image processing framework developed by python. You can use PSPY to process digital image conveniently like photoshop and add your own funcitons and interfaces easily by python. 
 PSPY is suitalbe for friends who start to study the knowledge of opencv.
-# Requirement
+# Installtion
 - You should to install python3.</br> 
 - You should install two lib:</br>
   - opencv_python</br>
@@ -13,7 +13,7 @@ pip install opencv_python
 `
 pip install wxpython 
 `
-# Use
+# Use conveniently like PS
 - You can clone down the project and open the 'Main_UI.py' to run the software.</br>
 
 ![PSPY](https://github.com/HamburgerZ/PSPY/blob/master/PSPY.PNG)</br>
@@ -29,7 +29,8 @@ you will see the different binary image when you use different parameters.</br>
 ![image_gray](https://github.com/HamburgerZ/PSPY/blob/master/image_gray.PNG)
 ![image_threshold](https://github.com/HamburgerZ/PSPY/blob/master/image_threshold.PNG)</br>
 
-- Of course,there are some other functions and I will introduce those next time.
+# add your interface conveniently by python
+# design thought
 
           
 
