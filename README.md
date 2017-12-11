@@ -16,20 +16,36 @@ pip install wxpython
 # Use conveniently like PS
 - You can clone down the project and open the 'Main_UI.py' to run the software.</br>
 
-![PSPY](https://github.com/HamburgerZ/PSPY/blob/master/PSPY.PNG)</br>
+<div align=center><img src=https://github.com/HamburgerZ/PSPY/blob/master/picture/PSPY_menu.PNG/></div>
 
 - If you touch the 'file' in the menu and select the 'open image' in the list, the image will be shown in the window</br>
 And we can process the digital image easily.</br>
-- for example, you can touch the 'process' in the menu and select the 'cvtcolor' in the list, 
-the image will transform type of RGB to type of gray.After that,
-you can select the 'threshold' in the same list and adjust the parameter by yourself, 
+- for example, you can touch the 'imgprocess' in the menu and select the 'cvtcolor' in the list, 
+the image will transform type of RGB to type of gray.
+
+<div align=center><img src=https://github.com/HamburgerZ/PSPY/blob/master/picture/cvt_process.PNG/></div>
+
+- After that, you can select the 'threshold' in the same list and djust the parameter by yourself, 
 you will see the different binary image when you use different parameters.</br>
 
-![image_original](https://github.com/HamburgerZ/PSPY/blob/master/image_original.PNG)
-![image_gray](https://github.com/HamburgerZ/PSPY/blob/master/image_gray.PNG)
-![image_threshold](https://github.com/HamburgerZ/PSPY/blob/master/image_threshold.PNG)</br>
+<div align=center><img src=https://github.com/HamburgerZ/PSPY/blob/master/picture/thres_process.PNG/></div>
 
 # Add your interface conveniently by python
+** In fact,you can add your interface conveniently by python according the rule and you just only add the designer's parameter and your function.**
+- you could add your option in the menu easily by adding the parameter.For example, If I want to add the option 'file' to the menu, I can add these parameter.
+
+<div align=center><img src=https://github.com/HamburgerZ/PSPY/blob/master/picture/file_parm.PNG/>
+
+<div align=center><img src=https://github.com/HamburgerZ/PSPY/blob/master/picture/imgprocess_parm.PNG/></div>
+
+- For example, I want to add a function to change the colorspace of image from one type to another type. I just add these code to their file.
+
+<div align=center><img src=https://github.com/HamburgerZ/PSPY/blob/master/picture/cvt_parm.PNG/></div>
+
+- And I want to add a function to draw an binary image. I just add these code to their file.
+
+<div align=center><img src=https://github.com/HamburgerZ/PSPY/blob/master/picture/thres_parm.PNG/></div>
+
 # Design thought
 
           
