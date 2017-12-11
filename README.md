@@ -50,6 +50,7 @@ you will see the different binary image when you use different parameters.</br>
 
 # Design thought
 
+<div align=center><img src=https://github.com/HamburgerZ/PSPY/blob/master/picture/design_thought.PNG/></div>
 
           
 
