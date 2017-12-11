@@ -31,7 +31,7 @@ you will see the different binary image when you use different parameters.</br>
 <div align=center><img src=https://github.com/HamburgerZ/PSPY/blob/master/picture/thres_process.PNG/></div>
 
 # Add your interface conveniently by python
-** In fact,you can add your interface conveniently by python according the rule and you just only add the designer's parameter and your function.**
+**In fact,you can add your interface conveniently by python according the rule and you just only add the designer's parameter and your function.**
 - you could add your option in the menu easily by adding the parameter.For example, If I want to add the option 'file' and the option 'imgprocess' to the menu, I can add these parameter.
 
 <div align=center><img src=https://github.com/HamburgerZ/PSPY/blob/master/picture/file_parm.PNG/></div>
