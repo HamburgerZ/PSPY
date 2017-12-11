@@ -32,11 +32,13 @@ you will see the different binary image when you use different parameters.</br>
 
 # Add your interface conveniently by python
 ** In fact,you can add your interface conveniently by python according the rule and you just only add the designer's parameter and your function.**
-- you could add your option in the menu easily by adding the parameter.For example, If I want to add the option 'file' to the menu, I can add these parameter.
+- you could add your option in the menu easily by adding the parameter.For example, If I want to add the option 'file' and the option 'imgprocess' to the menu, I can add these parameter.
 
-<div align=center><img src=https://github.com/HamburgerZ/PSPY/blob/master/picture/file_parm.PNG/>
-
+<div align=center><img src=https://github.com/HamburgerZ/PSPY/blob/master/picture/file_parm.PNG/></div>
 <div align=center><img src=https://github.com/HamburgerZ/PSPY/blob/master/picture/imgprocess_parm.PNG/></div>
+
+<div align=center><img src=https://github.com/HamburgerZ/PSPY/blob/master/picture/file_menu.png/></div>
+<div align=center><img src=https://github.com/HamburgerZ/PSPY/blob/master/picture/imgprocess_menu.png/></div>
 
 - For example, I want to add a function to change the colorspace of image from one type to another type. I just add these code to their file.
 
@@ -47,6 +49,7 @@ you will see the different binary image when you use different parameters.</br>
 <div align=center><img src=https://github.com/HamburgerZ/PSPY/blob/master/picture/thres_parm.PNG/></div>
 
 # Design thought
+
 
           
 
