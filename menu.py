@@ -13,15 +13,26 @@ class MainMenu( wx.Frame ):
         self.SetIcon( self.image_ico )
 
         self.frame_menu = wx.MenuBar()
+
         self.file_menu = wx.Menu()
-        self.frame_menu.Append( self.file_menu, 'file' )
-        self.imgpro_menu = wx.Menu()
-        self.frame_menu.Append( self.imgpro_menu, 'imgpro' )
-        self.fork_menu = wx.Menu()
-        self.frame_menu.Append( self.fork_menu, 'fork' )
+        self.frame_menu.Append( self.file_menu, 'File' )
+        self.edit_menu = wx.Menu()
+        self.frame_menu.Append( self.edit_menu, 'Edit' )
+        self.preprocess_menu = wx.Menu()
+        self.frame_menu.Append( self.preprocess_menu, 'Preprocess' )
+        self.enhance_menu = wx.Menu()
+        self.frame_menu.Append( self.enhance_menu, 'Enhance' )
+        self.detect_menu = wx.Menu()
+        self.frame_menu.Append( self.detect_menu, 'Detect' )
+        self.demo_menu = wx.Menu()
+        self.frame_menu.Append( self.demo_menu, 'Demo' )
+        self.display_menu = wx.Menu()
+        self.frame_menu.Append( self.display_menu, 'Display' )
 
         self.mmenu_parm = designer_parm
-        self.temp_option = []
+        self.smenu_option = {}
+        self.ssmenu_option = []
+        self.smenu_names = []
         self.dlg_name = []
         self.drawimg_dlg = None
         self.ctrl_handler = None
@@ -30,22 +41,42 @@ class MainMenu( wx.Frame ):
 
     def menu_draw( self ):
         for i in self.mmenu_parm.menus_parms: # i is a tuple
-            if( i[0] == 'file' ):
+            if( i[0] == 'File' ):
                 if( i[1] == 'open image' ):
-                    self.temp_option.append( self.file_menu.Append( -1, i[1] ) )
-                    self.Bind( wx.EVT_MENU, self.openimg_handler, self.temp_option[-1] )
+                    self.smenu_names.append( i[1] )
+                    self.smenu_option[ i[1] ] = self.file_menu.Append( -1, i[1] )
+                    self.Bind( wx.EVT_MENU, self.openimg_handler, self.smenu_option[ i[1] ] )
                 elif( i[1] == 'save image' ):
-                    self.temp_option.append( self.file_menu.Append( -1, i[1] ) )
-                    self.Bind( wx.EVT_MENU, self.saveimg_handler, self.temp_option[-1] )
-            elif( i[0] == 'imgprocess' ):
-                self.temp_option.append( self.imgpro_menu.Append( -1, i[1] ) )
-                self.dlg_name = i[1]
-                self.ctrl_handler = lambda event, dlg_name = i[1]: \
-                self.adjustpram_handler( event, dlg_name )
-                self.ctrls_handlers[ self.dlg_name ] = self.ctrl_handler
-                self.Bind( wx.EVT_MENU, self.ctrls_handlers[ self.dlg_name ], \
-                           self.temp_option[-1] )
-        self.SetMenuBar( self.frame_menu )
+                    self.smenu_names.append( i[1] )
+                    self.smenu_option[ i[1] ] = self.file_menu.Append( -1, i[1] )
+                    self.Bind( wx.EVT_MENU, self.saveimg_handler, self.smenu_option[ i[1] ] )
+            elif( i[0] == 'Edit' ):
+                if( i[1] == 'undo' ):
+                    self.smenu_names.append( i[1] )
+                    self.smenu_option[ i[1] ] = self.edit_menu.Append( -1, i[1] )
+                    self.Bind( wx.EVT_MENU, self.undo_handler, self.smenu_option[ i[1] ] )
+            elif( i[0] == 'Preprocess' ):
+                if( i[1] not in self.smenu_names ):
+                    self.smenu_option[ i[1] ] =  wx.Menu()
+                    self.ssmenu_option.append( self.smenu_option[ i[1] ].Append( -1, i[2] ) )
+                    self.preprocess_menu.Append( -1, i[1], self.smenu_option[ i[1] ] )
+                    self.dlg_name = i[2]
+                    self.ctrl_handler = lambda event, dlg_name = i[2]: \
+                    self.adjustpram_handler( event, dlg_name )
+                    self.ctrls_handlers[ self.dlg_name ] = self.ctrl_handler
+                    self.Bind( wx.EVT_MENU, self.ctrls_handlers[ self.dlg_name ], \
+                               self.ssmenu_option[-1] )
+                    self.smenu_names.append( i[1] )
+                elif( i[1] in self.smenu_names ):
+                    self.ssmenu_option.append( self.smenu_option[ i[1] ].Append( -1, i[2] ) )
+                    #self.preprocess_menu.AppendMenu( -1, i[1], self.smenu_option[ i[1] ] )
+                    self.dlg_name = i[2]
+                    self.ctrl_handler = lambda event, dlg_name = i[2]: \
+                    self.adjustpram_handler( event, dlg_name )
+                    self.ctrls_handlers[ self.dlg_name ] = self.ctrl_handler
+                    self.Bind( wx.EVT_MENU, self.ctrls_handlers[ self.dlg_name ], \
+                               self.ssmenu_option[-1] )
+            self.SetMenuBar( self.frame_menu )
 
     def adjustpram_handler( self, event, dlg_name ): #draw the image in the list output_image according the name
         parameter.adjustparm_dlg[ dlg_name ]  \
@@ -82,6 +113,13 @@ class MainMenu( wx.Frame ):
             cv2.imwrite( parameter.user_parm.imgs_names[ -1 ] + '.bmp',\
         cv2.cvtColor( parameter.user_parm.imgs[ parameter.user_parm.imgs_names[ -1 ] ],\
          cv2.COLOR_BGR2RGB ) )
+
+    def undo_handler( self, event ):
+        parameter.user_parm.imgs.pop( parameter.user_parm.imgs_names[ -1 ] )
+        parameter.user_parm.funcs_parms.pop()
+        parameter.user_parm.imgs_names.pop()
+        self.img_draw( parameter.user_parm.imgs[ parameter.user_parm.imgs_names[ -1 ] ],\
+        parameter.user_parm.imgs_names[ -1 ] )
 
     def img_draw( self, draw_img, img_name ):
         self.img_heigth, self.img_width = draw_img.shape[ :2 ]

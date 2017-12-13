@@ -17,10 +17,12 @@ user_parm = UserParm()
 
 # add the open image parameter
 
-designer_parm.menus_parms.append( [ 'file', 'open image' ] )
-designer_parm.menus_parms.append( [ 'file', 'save image' ] )
+designer_parm.menus_parms.append( [ 'File', 'open image' ] )
+designer_parm.menus_parms.append( [ 'File', 'save image' ] )
+designer_parm.menus_parms.append( [ 'Edit', 'undo' ] )
 
-designer_parm.menus_parms.append( [ 'imgprocess', 'cvtcolor' ] )
+designer_parm.menus_parms.append( [ 'Preprocess', 'BasicOperation', 'cvtcolor' ] )
+designer_parm.menus_parms.append( [ 'Preprocess', 'BasicOperation', 'threshold' ] )
 
 designer_parm.dlgs_parms[ 'cvtcolor' ] = \
 ( [ [ 'ChoiceCtrl','Input:' ], \
