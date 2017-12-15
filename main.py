@@ -13,6 +13,7 @@ class MainApp( wx.App ):
     def OnInit(self):
         self.main_frame = MainFrame( parameter.designer_parm )
         self.SetTopWindow( self.main_frame )
+
         self.main_frame.Show()
         return True
 

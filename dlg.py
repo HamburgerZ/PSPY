@@ -78,11 +78,16 @@ class AdjparmDlg( wx.Dialog ):
                 j = j + 1
             #collect the parameter of user
             parameter.user_parm.funcs_parms.append( self.dlg_userparm )
-            parameter.user_parm.imgs_names.append( self.dlg_userparm[ -1 ] )
+            if( len( parameter.user_parm.funcs_parms[-1] ) != 2 ):
+                parameter.user_parm.imgs_names.append( self.dlg_userparm[ -1 ] )
+            else:
+                #parameter.user_parm.imgs_names.append( parameter.user_parm.imgs_names[ \
+                #self.dlg_userparm[ -1 ] ] )
+                pass
             self.parm_inper( parameter.user_parm )
             self.img_draw( parameter.user_parm.imgs[ \
-                                  parameter.user_parm.imgs_names[ -1 ] ],\
-                           parameter.user_parm.imgs_names[ -1 ] )
+                              parameter.user_parm.imgs_names[ -1 ] ],\
+                       parameter.user_parm.imgs_names[ -1 ] )
             self.preview_timer.Stop()
             self.preview_timer.Destroy()
         else:

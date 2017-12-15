@@ -76,6 +76,27 @@ class MainMenu( wx.Frame ):
                     self.ctrls_handlers[ self.dlg_name ] = self.ctrl_handler
                     self.Bind( wx.EVT_MENU, self.ctrls_handlers[ self.dlg_name ], \
                                self.ssmenu_option[-1] )
+            elif( i[0] == 'Display' ):
+                if( i[1] not in self.smenu_names ):
+                    self.smenu_option[ i[1] ] =  wx.Menu()
+                    self.ssmenu_option.append( self.smenu_option[ i[1] ].Append( -1, i[2] ) )
+                    self.display_menu.Append( -1, i[1], self.smenu_option[ i[1] ] )
+                    self.dlg_name = i[2]
+                    self.ctrl_handler = lambda event, dlg_name = i[2]: \
+                    self.adjustpram_handler( event, dlg_name )
+                    self.ctrls_handlers[ self.dlg_name ] = self.ctrl_handler
+                    self.Bind( wx.EVT_MENU, self.ctrls_handlers[ self.dlg_name ], \
+                               self.ssmenu_option[-1] )
+                    self.smenu_names.append( i[1] )
+                elif( i[1] in self.smenu_names ):
+                    self.ssmenu_option.append( self.smenu_option[ i[1] ].Append( -1, i[2] ) )
+                    #self.preprocess_menu.AppendMenu( -1, i[1], self.smenu_option[ i[1] ] )
+                    self.dlg_name = i[2]
+                    self.ctrl_handler = lambda event, dlg_name = i[2]: \
+                    self.adjustpram_handler( event, dlg_name )
+                    self.ctrls_handlers[ self.dlg_name ] = self.ctrl_handler
+                    self.Bind( wx.EVT_MENU, self.ctrls_handlers[ self.dlg_name ], \
+                               self.ssmenu_option[-1] )
             self.SetMenuBar( self.frame_menu )
 
     def adjustpram_handler( self, event, dlg_name ): #draw the image in the list output_image according the name
