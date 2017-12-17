@@ -27,5 +27,13 @@ def parm_inper( user_parm ): #input the instance of class UserParm
     user_parm.funcs_parms[-1][3], \
     user_parm.funcs_parms[-1][4] )
 
+    elif( user_parm.funcs_parms[-1][0] == 'reimage' ):
+        parameter.user_parm.imgs_names.append( \
+        parameter.user_parm.imgs_names[ parameter.user_parm.funcs_parms[-1][1] ] )
+        print( parameter.user_parm.imgs_names )
+        del parameter.user_parm.imgs_names[ \
+        parameter.user_parm.funcs_parms[-1][1] ]
+        parameter.user_parm.funcs_parms.pop()
+
     return result
 

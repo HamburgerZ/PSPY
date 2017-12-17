@@ -42,3 +42,9 @@ designer_parm.dlgs_parms[ 'threshold' ] = \
 [ 'TextCtrl', 'Output:' ],
 [ 'OkCancelPreview' ] \
 ] )
+
+designer_parm.menus_parms.append( [ 'Display', 'Review', 'reimage' ] )
+
+designer_parm.dlgs_parms[ 'reimage' ] = \
+( [ [ 'ChoiceCtrl', 'Input:' ], [ 'OkCancelPreview' ] ] )
+
