@@ -1,5 +1,6 @@
 import cv2
 import parameter
+import show
 
 def parm_inper( user_parm ): #input the instance of class UserParm
     #user_parm maybe a single list or set of list
@@ -10,7 +11,7 @@ def parm_inper( user_parm ): #input the instance of class UserParm
     cv2.cvtColor( parameter.user_parm.imgs[ \
     parameter.user_parm.imgs_names[ \
     user_parm.funcs_parms[-1][1] ] ], \
-    user_parm.funcs_parms[-1][2] )
+    eval( user_parm.funcs_parms[-1][2] ) )
 
     elif( user_parm.funcs_parms[-1][0] == 'openimg' ):
         user_parm.imgs[ user_parm.funcs_parms[-1][2] ] = \
@@ -25,15 +26,20 @@ def parm_inper( user_parm ): #input the instance of class UserParm
     parameter.user_parm.imgs_names[ user_parm.funcs_parms[-1][1] ] ], \
     user_parm.funcs_parms[-1][2], \
     user_parm.funcs_parms[-1][3], \
-    user_parm.funcs_parms[-1][4] )
+    eval( user_parm.funcs_parms[-1][4] ) )
 
     elif( user_parm.funcs_parms[-1][0] == 'reimage' ):
         parameter.user_parm.imgs_names.append( \
         parameter.user_parm.imgs_names[ parameter.user_parm.funcs_parms[-1][1] ] )
-        print( parameter.user_parm.imgs_names )
         del parameter.user_parm.imgs_names[ \
         parameter.user_parm.funcs_parms[-1][1] ]
         parameter.user_parm.funcs_parms.pop()
+
+    elif( user_parm.funcs_parms[-1][0] == 'colorhist' ):
+        show.colorhist( parameter.user_parm.imgs[ \
+        parameter.user_parm.imgs_names[  \
+        user_parm.funcs_parms[-1][1] ] ], \
+        user_parm.funcs_parms[-1][2]  )
 
     return result
 

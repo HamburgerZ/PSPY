@@ -29,7 +29,9 @@ designer_parm.dlgs_parms[ 'cvtcolor' ] = \
 [ 'ChoiceCtrl', 'Way:', \
 [ 'cv2.COLOR_BGR2GRAY', 'cv2.COLOR_BGR2RGB' ] ], \
 [ 'TextCtrl', 'Output:' ], \
-[ 'OkCancelPreview' ] ]  )
+[ 'Preview'  ], \
+[ 'OkCancel' ], \
+]  )
 
 designer_parm.menus_parms.append( [ 'imgprocess', 'threshold' ] )
 
@@ -39,12 +41,23 @@ designer_parm.dlgs_parms[ 'threshold' ] = \
 [ 'Slider', 'MaxVal:', 1, 255, 1 ], \
 [ 'ChoiceCtrl', 'Way:', \
 [ 'cv2.THRESH_BINARY', 'cv2.THRESH_BINARY_INV' ] ],\
-[ 'TextCtrl', 'Output:' ],
-[ 'OkCancelPreview' ] \
+[ 'TextCtrl', 'Output:' ], \
+[ 'Preview' ], \
+[ 'OkCancel' ], \
 ] )
 
 designer_parm.menus_parms.append( [ 'Display', 'Review', 'reimage' ] )
 
 designer_parm.dlgs_parms[ 'reimage' ] = \
-( [ [ 'ChoiceCtrl', 'Input:' ], [ 'OkCancelPreview' ] ] )
+( [ [ 'ChoiceCtrl', 'Input:' ], \
+    [ 'OkCancel' ], \
+    ] )
 
+designer_parm.menus_parms.append( [ 'Display', 'Show', 'colorhist' ] )
+
+designer_parm.dlgs_parms[ 'colorhist' ] = \
+( [ [ 'ChoiceCtrl', 'Input:' ], \
+    [ 'ChoiceCtrl', 'Cspace', \
+    [ 'RGB', 'HSV', 'GRAY' ]  ], \
+    [ 'OkCancel' ], \
+    ] )

@@ -10,7 +10,7 @@ class AdjparmDlg( wx.Dialog ):
         self.dlg_name = extend_parm
         wx.Dialog.__init__( self, None, -1,  \
                   title = self.dlg_name, size = ( 190 + 40,
-        len( parameter.designer_parm.dlgs_parms[self.dlg_name] ) * 65 + 12 + 35 + 45 - 10 ) )
+        len( parameter.designer_parm.dlgs_parms[self.dlg_name] ) * 65 + 12 + 35 ) )
         self.dlg_userparm = []                    #list of userparm from dlg with controls
         self.drawimg_dlg = None                   #the dlg with image
         self.preview_timer = wx.Timer( self )     #the timer
@@ -47,14 +47,16 @@ class AdjparmDlg( wx.Dialog ):
             j*65 + 10 ), size=( 140, 40 ), style = wx.SL_AUTOTICKS|wx.SL_LABELS ) )#control about slider
                 self.control_set[ -1 ].SetTickFreq( i[4] ) #scale about slider
 
-            if( i[0] == 'OkCancelPreview' ):
-                self.control_set.append( wx.CheckBox( self, label = 'Preview',pos = ( 80, j*65  ) ) )
+            if( i[0] == 'Preview' ):
+                self.control_set.append( wx.CheckBox( self, label = 'Preview',pos = ( 80, j*65 ) ) )
                 self.Bind( wx.EVT_CHECKBOX,self.checkbox_handler )
                 self.Bind( wx.EVT_TIMER, self.preview_handler )
+
+            if( i[0] == 'OkCancel' ):
                 self.control_set.append( wx.Button( self, wx.ID_OK, 'OK', pos=( 10, \
-            j*65 + 45 ), size=( 80, 25 ) ) )
+            j*65  ), size=( 80, 25 ) ) )
                 self.control_set.append( wx.Button( self, wx.ID_CANCEL, 'Cancel', pos = ( 120, \
-            j*65 + 45 ), size=( 80, 25 ) ) )
+            j*65  ), size=( 80, 25 ) ) )
             j = j + 1
 
     def collect_parm( self ):
@@ -69,7 +71,7 @@ class AdjparmDlg( wx.Dialog ):
                           self.control_set[ j ].GetSelection() )
                     else:
                         self.dlg_userparm.append( \
-                        eval( i[2][ self.control_set[ j ].GetSelection() ] ) )
+                         i[2][ self.control_set[ j ].GetSelection() ]  )
                 elif( i[0] == 'TextCtrl' or i[0] == 'Slider' ):
                     self.dlg_userparm.append( \
                      self.control_set[ j ].GetValue() )
@@ -78,8 +80,9 @@ class AdjparmDlg( wx.Dialog ):
                 j = j + 1
             #collect the parameter of user
             parameter.user_parm.funcs_parms.append( self.dlg_userparm )
-            if( len( parameter.user_parm.funcs_parms[-1] ) != 2 ):
-                parameter.user_parm.imgs_names.append( self.dlg_userparm[ -1 ] )
+            if( len( parameter.user_parm.funcs_parms[-1] ) >= 3 ):
+                if ( parameter.designer_parm.dlgs_parms[ self.dlg_name ][-3][0] == 'TextCtrl' ):
+                    parameter.user_parm.imgs_names.append( self.dlg_userparm[ -1 ] )
             else:
                 #parameter.user_parm.imgs_names.append( parameter.user_parm.imgs_names[ \
                 #self.dlg_userparm[ -1 ] ] )
@@ -117,7 +120,7 @@ class AdjparmDlg( wx.Dialog ):
                       self.control_set[ j ].GetSelection() )
                 else:
                     func_tempparam.append( \
-                    eval( i[2][ self.control_set[ j ].GetSelection() ] ) )
+                    i[2][ self.control_set[ j ].GetSelection() ] )
             elif( i[0] == 'TextCtrl' or i[0] == 'Slider' ):
                 func_tempparam.append( \
                  self.control_set[ j ].GetValue() )
